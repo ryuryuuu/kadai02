@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>Rock Scissors Paper</title>
+</head>
+<body>
+
+<header>
+  <h1>Rock Scissors Paper</h1>
+  <p>"Rule Book"</p>
+  <p>①Choose your hand</p>
+  <p>②See PC's hand</p>
+  <p>③Result</p>
+</header>
+
+<main>
+  <ul id>
+    <li id="gu_btn">Rock</li>
+    <li id="cho_btn">Scissors</li>
+    <li id="par_btn">Paper</li>
+  </ul>
+  <div>PC's choise is？「<span id="pc_hands">What</span>」</div>
+  <div id="judgment">Result</div>
+
+</main>
+
+<footer></footer>
+<script>
+//じゃんけん用のSCRIPTを書いてください
+//じゃんけん関数
+// ヒント↓
+// グー・チョキ・パーのいずれかのボタンが押されたら実行される
+// グーVer
+$("#gu_btn").on("click",function(){
+// コンピューターが出した手を計算する
+  // 1.乱数(1~5)
+  const r = Math.ceil( Math.random()*3);
+
+  // 2.if分岐処理 (PC出し手)
+  let view = ""
+  if(r == 1){
+    view = "Rock";
+  }
+  if (r == 2){
+    view = "Scissors";
+  }
+  if (r == 3){
+    view = "Paper";
+  }
+  console.log(view)
+
+  // 3.if分岐処理 (勝敗)
+  let result = ""
+  if(view == "Rock"){
+      result = "Draw";
+  }
+  else if(view == "Scissors"){
+      result = "Win";
+  }
+  else if(view == "Paper"){
+      result = "Lose";
+  }
+  console.log(result)
+
+  // 4.表示処理
+  $("#judgment").html(result);
+  $("#pc_hands").html(view);
+
+});
+
+// チョキVer
+$("#cho_btn").on("click",function(){
+// コンピューターが出した手を計算する
+  // 1.乱数(1~5)
+  const r = Math.ceil( Math.random()*3);
+
+  // 2.if分岐処理 (PC出し手)
+  let view = ""
+  if(r == 1){
+    view = "Rock";
+  }
+  if (r == 2){
+    view = "Scissors";
+  }
+  if (r == 3){
+    view = "Paper";
+  }
+  console.log(view)
+
+  // 3.if分岐処理 (勝敗)
+  let result = ""
+  if(view == "Rock"){
+      result = "Lose";
+  }
+  else if(view == "Scissors"){
+      result = "Draw";
+  }
+  else if(view == "Paper"){
+      result = "Win";
+  }
+  console.log(result)
+
+  // 4.表示処理
+  $("#judgment").html(result);
+  $("#pc_hands").html(view);
+
+});
+
+// パーVer
+$("#par_btn").on("click",function(){
+// コンピューターが出した手を計算する
+  // 1.乱数(1~5)
+  const r = Math.ceil( Math.random()*3);
+
+  // 2.if分岐処理 (PC出し手)
+  let view = ""
+  if(r == 1){
+    view = "Rock";
+  }
+  if (r == 2){
+    view = "Scissors";
+  }
+  if (r == 3){
+    view = "Paper";
+  }
+  console.log(view)
+
+  // 3.if分岐処理 (勝敗)
+  let result = ""
+  if(view == "Rock"){
+      result = "Win";
+  }
+  else if(view == "Scissors"){
+      result = "Lose";
+  }
+  else if(view == "Paper"){
+      result = "Draw";
+  }
+  console.log(result)
+
+  // 4.表示処理
+  $("#judgment").html(result);
+  $("#pc_hands").html(view);
+
+});
+
+
+</script>
+</body>
+</html>
